@@ -25,12 +25,12 @@ Password Validator is a module for specifing custom rules and handling the secur
 from PasswordValidator import PasswordValidator
 
 # Initialize Password Validator with required properties
-passwordValidator = PasswordValidator(minLength = 6, maxLength = 12, hasLowerCase = True, hasUpperCase = True, hasNumeric = True, specialCharacters = "*$_#=@" excludedCharacters = "[%!)(]")
+passwordValidator = PasswordValidator(minLength = 6, maxLength = 12, hasLowerCase = True, hasUpperCase = True, hasNumeric = True, specialCharacters = "*$_#=@" excludedCharacters = "%!)(")
 
 # Validate password strings
-passwordValidator.validate("Hello24@*") # Success
+passwordValidator.validate("Hello24@*") # Success.
 
-passwordValidator.validate("helloz") # Failure Password must contain at least one letter from A-Z
+passwordValidator.validate("helloz") # Failure Password must contain at least one letter from A-Z.
 
 passwordValidator.validate("HELLOINDIA") # Failure Password must contain at least one letter from a-z.
 
@@ -40,7 +40,7 @@ passwordValidator.validate("Skjdfldjldfjfdklj") # Failure Password must be at ma
 
 passwordValidator.validate("Hello234") # Failure Password must contain at least one letter from *$_#=@.
 
-passwordValidator.validate("dljfd5dfSF$%") # Failure Password cannot contain [%!)(].
+passwordValidator.validate("dljfd5dfSF$%") # Failure Password cannot contain %!)(.
 
 ```
 
